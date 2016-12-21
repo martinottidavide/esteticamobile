@@ -1,35 +1,41 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<script type="text/javascript" src="script.js"></script>
-		<style>
-			body { 
-				background:url("sfondo_big.png") no-repeat;
-				background-size:cover;
-				margin:0px;
-			}
-		</style>
-	</head>
-	
-	<body onload="loaded();">
-		<div id="logoContainer" style="background-color:#ddd;text-align:center;">
-			<img src="logo.png" style="height:60px;margin-top:10px;margin-bottom:10px;"/>
-		</div>
-		<p style="font-size: 20px; color: gray;" id="intro">
-			<span id="qui">Recupero informazioni in corso</span><br>
-			<div style="text-align:center" id="intro2">
-				<img style="width:50%" src="load.gif"/>
-			</div>
-		</p>
-		
-		<input type="button" id="centra" value="Accedi" onclick="apriApp();" style="display:none;margin-top: 150px; height: 50px; width: 200px; background-color: black; color: white; font-size: 21px; border-radius: 15px;"/>
-		<a id="link" href="http://confsitonew.maxapp.eu/Agenti/"></a>
-		<script>
+<head>
+  <!-- Include meta tag to ensure proper rendering and touch zooming -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Include jQuery Mobile stylesheets -->
+  <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+  <!-- Include the jQuery library -->
+  <script src="js/jquery.min.js"></script>
+  <!-- Include the jQuery Mobile library -->
+  <script src="js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="pageone">
+  <div data-role="header">
+    <h1><?PHP echo "Titolo"; ?></h1>
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <p id="qui">Insert Content Here</p>
+  </div>
+
+  <div data-role="footer">
+    <h1>Insert Footer Text Here</h1>
+  </div>
+</div> 
+<script>
+			console.log("ciao");
 			$( document ).on( "mobileinit", function() {
 				// Make your jQuery Mobile framework configuration changes here!
 
 				$.mobile.allowCrossDomainPages = true;
+				
+			});
+			$( document ).ready(function(){
+				
 				$.post(
-					"http://www.estetica24.com/getdata", 
+					"http://www.estetica24.com/getmobiledata.php", 
 					{username:"davide",password:"webdeveloper"}, 
 					function(res) { 
 						//store window.localStorage[“username”] = u; window.localStorage[“password”] = p;
@@ -38,5 +44,5 @@
 				);
 			});
 		</script>
-	</body>
+</body>
 </html>
