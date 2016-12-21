@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "it.estetica24.mobileapp"
+        versionCode = "1"
+        version     = "1.0.0" >
+
+    <name>Jquery mobile app</name>
+
+    <description>
+        An example for phonegap build docs.
+    </description>
+
+    <author href="http://www.estetica24.it" email="martinottidavide@virgilio.it">
+        Martinotti Davide
+    </author>
+
+<plugin name="cordova-plugin-whitelist" />
+<access origin="*" />
+</widget>
