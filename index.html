@@ -33,7 +33,7 @@
 				
 			});
 			$( document ).ready(function(){
-				var evtSource = new EventSource("server.php");
+				var evtSource = new EventSource("http://www.estetica24.com/getmobiledata.php");
 				evtSource.onmessage = function(e) {
 				  var newElement = document.createElement("li");
 				  
