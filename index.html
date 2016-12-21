@@ -17,7 +17,7 @@
   </div>
 
   <div data-role="main" class="ui-content">
-    <p id="qui">Insert Content Here</p>
+    <ul id="qui"></ul>
   </div>
 
   <div data-role="footer">
@@ -33,15 +33,14 @@
 				
 			});
 			$( document ).ready(function(){
+				var evtSource = new EventSource("http://www.estetica24.com/getmobiledata.php");
+				evtSource.onmessage = function(e) {
+				  var newElement = document.createElement("li");
+				  
+				  newElement.innerHTML = "message: " + e.data;
+				  $("#qui").appendChild(newElement);
+				}
 				
-				$.post(
-					"http://www.estetica24.com/getmobiledata.php", 
-					{username:"davide",password:"webdeveloper"}, 
-					function(res) { 
-						//store window.localStorage[“username”] = u; window.localStorage[“password”] = p;
-						$("#qui").html(res)
-					}
-				);
 			});
 		</script>
 </body>
